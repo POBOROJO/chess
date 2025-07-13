@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@stagewise-plugins/react':
+        specifier: ^0.5.2
+        version: 0.5.2(@stagewise/toolbar@0.5.2)
+      '@stagewise/toolbar-react':
+        specifier: ^0.5.2
+        version: 0.5.2(@types/react@18.3.23)(react@18.3.1)
       clsx:
         specifier: ^2.0.0
         version: 2.1.1
@@ -27,6 +33,9 @@ importers:
         specifier: ^2.0.0
         version: 2.6.0
     devDependencies:
+      '@stagewise/toolbar':
+        specifier: ^0.5.2
+        version: 0.5.2
       '@types/react':
         specifier: ^18.3.3
         version: 18.3.23
@@ -418,6 +427,20 @@ packages:
     resolution: {integrity: sha512-SRf1cytG7wqcHVLrBc9VtPK4pU5wxiB/lNIkNmW2ApKXIg+RpqwHfsaEK+e7eH4A1BpI6BX/aBWXxZCIrJg3uA==}
     cpu: [x64]
     os: [win32]
+
+  '@stagewise-plugins/react@0.5.2':
+    resolution: {integrity: sha512-nNyaooMMPzRRqjN3ZqQneuQfuFYWEwYlWT7uYip0C+iHGuOJE+V3dUK6cJ8+q1YRAMBvzQYeDFqVZA01Cz9Ysw==}
+    peerDependencies:
+      '@stagewise/toolbar': 0.5.2
+
+  '@stagewise/toolbar-react@0.5.2':
+    resolution: {integrity: sha512-9TfmIFvqkpfGIGrpNIgmkKGKY9Fj/anypCQGgOcYICYQhHBFSQywz87fsdqk5tYrZVHlTyZlR0v2ixKd1+v2GQ==}
+    peerDependencies:
+      '@types/react': '>=18.0.0'
+      react: '>=18.0.0'
+
+  '@stagewise/toolbar@0.5.2':
+    resolution: {integrity: sha512-QxowY55dhYJS4iD3KuYCvmLl3jA74boYziEr9lent+NZpO1rjtF0KpDyld+hClA4lWnCVLPxhMwW69Qv2+xzjg==}
 
   '@types/babel__core@7.20.5':
     resolution: {integrity: sha512-qoQprZvz5wQFJwMDqeseRXWv3rqMvhgpbXFfVyWhbx9X47POIA6i/+dXefEmZKoAgOaTdaIgNSMqMIU61yRyzA==}
@@ -1299,6 +1322,18 @@ snapshots:
 
   '@rollup/rollup-win32-x64-msvc@4.45.0':
     optional: true
+
+  '@stagewise-plugins/react@0.5.2(@stagewise/toolbar@0.5.2)':
+    dependencies:
+      '@stagewise/toolbar': 0.5.2
+
+  '@stagewise/toolbar-react@0.5.2(@types/react@18.3.23)(react@18.3.1)':
+    dependencies:
+      '@stagewise/toolbar': 0.5.2
+      '@types/react': 18.3.23
+      react: 18.3.1
+
+  '@stagewise/toolbar@0.5.2': {}
 
   '@types/babel__core@7.20.5':
     dependencies:

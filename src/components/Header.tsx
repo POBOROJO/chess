@@ -1,7 +1,7 @@
-import React from 'react'
+import { useState } from 'react'
 
 const Header = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 py-4 bg-slate-900/80 backdrop-blur-md border-b border-white/10">
@@ -9,7 +9,7 @@ const Header = () => {
         <div className="flex items-center justify-between">
           <div className="flex items-center">
             <img 
-              src="/image copy copy.png" 
+              src="logo.jpeg" 
               alt="Talent Chess Academy" 
               className="h-10 w-10 sm:h-12 sm:w-12 mr-2 sm:mr-3 rounded-full object-cover border-2 border-emerald-500"
             />
