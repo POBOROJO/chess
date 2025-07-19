@@ -72,7 +72,7 @@ const Contact = () => {
   };
 
   const handleWhatsAppClick = () => {
-    const phoneNumber = "6003582956"; // Replace with actual WhatsApp number
+    const phoneNumber = "+91 6003582956"; // Replace with actual WhatsApp number
     const message = encodeURIComponent(
       "Hi! I'm interested in chess coaching lessons. Could you please provide more information?"
     );

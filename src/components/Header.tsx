@@ -21,7 +21,7 @@ const Header = () => {
               className="h-8 w-8 lg:h-10 lg:w-10 rounded-full mr-2 lg:mr-3 object-cover border border-emerald-400"
             />
             <span className="font-display text-lg lg:text-xl font-bold text-white tracking-tight">
-              ChessMaster
+              Talent Chess Academy
             </span>
           </div>
 
