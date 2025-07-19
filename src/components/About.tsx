@@ -1,6 +1,17 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 const About = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const images = ["main.jpeg", "main2.jpeg", "main3.jpeg", "main4.jpeg"];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % images.length);
+    }, 3000); // Change image every 3 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
   return (
     <section id="about" className="py-20 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -41,7 +52,7 @@ const About = () => {
               <div className="text-center p-3 sm:p-4 bg-neutral-light rounded-lg border border-gray-200">
                 <div className="text-xl sm:text-2xl mb-2">📚</div>
                 <div className="font-heading font-semibold text-primary-dark tracking-tight text-sm sm:text-base">
-                  10+ Years
+                  6+ Years
                 </div>
                 <div className="font-body text-xs sm:text-sm text-gray-text font-light tracking-wide">
                   Coaching Experience
@@ -51,19 +62,41 @@ const About = () => {
           </div>
 
           <div className="relative">
-            {/* Coach photo */}
+            {/* Coach photo carousel */}
             <div
-              className="w-full max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200"
+              className="w-full max-w-md mx-auto rounded-2xl overflow-hidden border border-gray-200 relative"
               style={{ aspectRatio: "853/1280" }}
             >
-              <img
-                src="main.jpeg"
-                alt="Chess Coach"
-                className="w-full h-full object-cover"
-                width={853}
-                height={1280}
-              />
+              {images.map((image, index) => (
+                <img
+                  key={image}
+                  src={image}
+                  alt={`Chess Coach ${index + 1}`}
+                  className={`w-full h-full object-cover absolute inset-0 transition-opacity duration-1000 ${
+                    index === currentImageIndex ? "opacity-100" : "opacity-0"
+                  }`}
+                  width={853}
+                  height={1280}
+                />
+              ))}
+
+              {/* Image indicators */}
+              <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                {images.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentImageIndex(index)}
+                    className={`w-2 h-2 rounded-full transition-colors duration-300 ${
+                      index === currentImageIndex
+                        ? "bg-white"
+                        : "bg-white/50 hover:bg-white/75"
+                    }`}
+                    aria-label={`View image ${index + 1}`}
+                  />
+                ))}
+              </div>
             </div>
+
             {/* Floating chess pieces decoration */}
             <div className="hidden sm:block absolute -top-3 sm:-top-4 -right-3 sm:-right-4 text-2xl sm:text-3xl lg:text-4xl opacity-30 chess-piece-float text-yellow-500">
               ♜

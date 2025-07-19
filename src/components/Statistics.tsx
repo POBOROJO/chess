@@ -1,5 +1,4 @@
-import React from 'react'
-import { NumberTicker } from '@/components/ui/number-ticker'
+import { NumberTicker } from "@/components/ui/number-ticker";
 
 const Statistics = () => {
   return (
@@ -10,24 +9,40 @@ const Statistics = () => {
             <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">
               <NumberTicker value={500} className="text-emerald-400" />+
             </div>
-            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">Students Taught</div>
+            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">
+              Students Taught
+            </div>
           </div>
           <div className="text-center">
             <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">
-              <NumberTicker value={10000} delay={0.2} className="text-emerald-400" />+
+              <NumberTicker
+                value={10000}
+                delay={0.2}
+                className="text-emerald-400"
+              />
+              +
             </div>
-            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">Classes Conducted</div>
+            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">
+              Classes Conducted
+            </div>
           </div>
           <div className="text-center">
             <div className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-emerald-400 tracking-tight">
-              <NumberTicker value={10} delay={0.4} className="text-emerald-400" />+
+              <NumberTicker
+                value={6}
+                delay={0.4}
+                className="text-emerald-400"
+              />
+              +
             </div>
-            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">Years Experience</div>
+            <div className="font-body text-slate-300 font-light tracking-wide text-base sm:text-lg">
+              Years Experience
+            </div>
           </div>
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default Statistics
+export default Statistics;
