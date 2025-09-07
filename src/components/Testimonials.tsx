@@ -15,10 +15,10 @@ const Testimonials = () => {
   const prizeWinners: Student[] = [
     {
       id: 1,
-      year: "2025",
+      year: "2024",
       image: "/test1.jpeg",
       description:
-        "Rapid Chess Competition 2025 winner, showcasing exceptional speed and accuracy in tactical combinations.",
+        "Chess Tournament 2024 winner, showcasing exceptional speed and accuracy in tactical combinations.",
       testimonial:
         "The training here transformed my game completely. I learned to think faster and calculate deeper under time pressure!",
     },
@@ -27,34 +27,34 @@ const Testimonials = () => {
       year: "2024",
       image: "/test2.jpeg",
       description:
-        "Rapid Chess Competition 2024 medalist, known for brilliant endgame techniques and time management.",
+        "Chess Tournament 2024 medalist, known for brilliant endgame techniques and time management.",
       testimonial:
         "The coaching helped me develop incredible time management skills. Now I can play complex positions confidently in rapid games.",
     },
     {
       id: 3,
-      year: "2023",
+      year: "2024",
       image: "/test3.jpeg",
       description:
-        "Rapid Chess Competition 2023 winner, demonstrated outstanding opening preparation and middle game strategy.",
+        "Chess Tournament 2024 winner, demonstrated outstanding opening preparation and middle game strategy.",
       testimonial:
         "My opening repertoire expanded dramatically. The strategic concepts I learned here gave me a huge advantage in competitions.",
     },
     {
       id: 4,
-      year: "2022",
+      year: "2025",
       image: "/test4.jpeg",
       description:
-        "Rapid Chess Competition 2022 medalist, recognized for creative tactical solutions and mental resilience.",
+        "Chess Tournament 2025 medalist, recognized for creative tactical solutions and mental resilience.",
       testimonial:
         "The tactical training was incredible. I can now spot combinations that I would have missed before. My calculation improved tremendously.",
     },
     {
       id: 5,
-      year: "2021",
+      year: "2025",
       image: "/test5.jpeg",
       description:
-        "Rapid Chess Competition 2021 winner, celebrated for aggressive attacking style and precise calculations.",
+        "Chess Tournament 2025 winner, celebrated for aggressive attacking style and precise calculations.",
       testimonial:
         "Learning aggressive attacking patterns changed my style completely. I went from defensive player to a feared attacker!",
     },
@@ -69,12 +69,12 @@ const Testimonials = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
         <div className="text-center">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
-            <span className="text-emerald-400">Rapid Chess Competition</span>{" "}
-            Champions
+            <span className="text-emerald-400">Achievements</span> of the
+            Students
           </h2>
           <p className="font-body text-slate-300 text-lg sm:text-xl max-w-3xl mx-auto leading-relaxed">
             Hear directly from our prize-winning students about their journey to
-            success in the Rapid Chess Competition (2021-2025)
+            succes story (2021-2025)
           </p>
         </div>
       </div>
@@ -133,7 +133,7 @@ const Testimonials = () => {
                     {student.year}
                   </p>
                   <p className="font-body text-slate-400 text-xs">
-                    Rapid Chess Competition
+                    Chess Tournament
                   </p>
                 </div>
 
@@ -233,7 +233,7 @@ const Testimonials = () => {
                   Student Champion
                 </h3>
                 <p className="font-body text-emerald-400 font-semibold text-lg mb-4">
-                  Rapid Chess Competition {selectedStudent.year}
+                  Chess Tournament {selectedStudent.year}
                 </p>
                 <p className="font-body text-slate-300 leading-relaxed mb-4">
                   {selectedStudent.description}
