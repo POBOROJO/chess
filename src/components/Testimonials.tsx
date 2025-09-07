@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
+import { Marquee } from "./ui/marquee";
 
 interface Student {
   id: number;
@@ -64,9 +65,9 @@ const Testimonials = () => {
       id="testimonials"
       className="py-16 sm:py-20 bg-gradient-to-br from-slate-900 via-slate-800 to-emerald-900"
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
+      {/* Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+        <div className="text-center">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
             <span className="text-emerald-400">Rapid Chess Competition</span>{" "}
             Champions
@@ -76,13 +77,19 @@ const Testimonials = () => {
             success in the Rapid Chess Competition (2021-2025)
           </p>
         </div>
+      </div>
 
-        {/* Prize Winners Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8 mb-12">
+      {/* Prize Winners Marquee - Full Width */}
+      <div className="relative mb-12">
+        <Marquee
+          reverse={true}
+          pauseOnHover={true}
+          className="[--duration:30s] [--gap:2rem]"
+        >
           {prizeWinners.map((student) => (
             <div
               key={student.id}
-              className="group relative overflow-hidden rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105"
+              className="group relative overflow-hidden rounded-2xl bg-slate-800/50 backdrop-blur-sm border border-slate-700/50 hover:border-emerald-500/50 transition-all duration-300 cursor-pointer transform hover:scale-105 w-80 shrink-0"
               onClick={() => setSelectedStudent(student)}
             >
               {/* Student Image */}
@@ -149,9 +156,15 @@ const Testimonials = () => {
               <div className="absolute inset-0 bg-emerald-500/10 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             </div>
           ))}
-        </div>
+        </Marquee>
 
-        {/* Achievement Stats */}
+        {/* Gradient overlays for smooth edges */}
+        <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-slate-900 via-slate-900/80 to-transparent"></div>
+        <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-slate-900 via-slate-900/80 to-transparent"></div>
+      </div>
+
+      {/* Achievement Stats */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
           <div className="text-center bg-slate-800/30 rounded-xl p-6 border border-slate-700/30">
             <div className="font-display text-3xl sm:text-4xl font-bold text-emerald-400 mb-2">
@@ -204,11 +217,11 @@ const Testimonials = () => {
                 </svg>
               </button>
 
-              <div className="aspect-video overflow-hidden rounded-t-2xl">
+              <div className="aspect-video overflow-hidden rounded-t-2xl bg-slate-800">
                 <img
                   src={selectedStudent.image}
                   alt={`Student ${selectedStudent.year}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
 
